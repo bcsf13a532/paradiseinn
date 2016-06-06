@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "showcust";
+}
+
+<h2>showcust</h2>
+
+
+<table>
+    <tr>
+        <td>ID</td>
+        &nbsp;&nbsp;<td>first_NAme</td>
+        &nbsp;&nbsp;<td>last_NAme</td>
+        &nbsp;<td>email</td>
+             <td>   </td>
+        
+    </tr>
+
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.Id</td>
+            <td>@s.First_name</td>
+            <td>@s.Last_name</td>
+            <td>@s.Email</td>
+            <td>@s.Password</td>
+            <td><img src="@s.image"  height="100" width="100" alt=""/></td>
+
+             
+        </tr>
+    }
+</table>

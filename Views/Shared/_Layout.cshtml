@@ -1,0 +1,147 @@
+﻿@using ParadiseInn.Models;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <title>Motel a Hotel Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Motel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
+    <link href="~/css/style.css" rel='stylesheet' type='text/css' />
+    <script src="~/js/jquery-1.11.1.min.js"></script>
+    <!--webfonts-->
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,600' rel='stylesheet' type='text/css'>
+    <!--//webfonts-->
+    <script type="text/javascript" src="~/js/bootstrap.js"></script>
+    <style>
+        #logout {
+            padding: 10px 15px 5px 1100px;
+        }
+        #uname{
+           padding:10px 15px 5px 50px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <!-- banner -->
+    <div class="banner">
+        <div class="header">
+            <div class="container">
+               
+                <div class="logo">
+                    <h1><a href="index.html">Paradise Inn</a></h1>
+                </div>
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <!--/.navbar-header-->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/Home/index">Home</a></li>
+                            <li><a href="/Home/rooms">Rooms</a></li>
+                            <li><a href="/Home/offers">Offers</a></li>
+                            <li><a href="/Home/services">Services</a></li>
+                            <li><a href="/Home/signin">Sign In</a></li>
+                            <li><a href="/Home/contact">Contact</a></li>
+
+                        </ul>
+                    </div>
+                    <!--/.navbar-collapse-->
+                </nav>
+                <div class="search-box">
+                    <div id="sb-search" class="sb-search">
+                        <form>
+                            <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+                            <input class="sb-search-submit" type="submit" value="">
+                            <span class="sb-icon-search"> </span>
+                        </form>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+                <h3>@Session["user"] </h3>
+              <!----  <img src="@Session["image"]" height="30" width="30" /> -->
+                <!-- search-scripts -->
+                <script src="~/js/classie.js"></script>
+                <script src="~/js/uisearch.js"></script>
+                <script>
+                    new UISearch(document.getElementById('sb-search'));
+                </script>
+                <!-- //search-scripts -->
+                @if (Session["user"] != null)
+                {  
+                  <div id="logout" class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
+                  <form action="/Home/logout" method="get">
+                  <input type="submit" value="logout">
+                  </form>
+                  </div>
+                }
+            </div>
+        </div>
+</div>
+        @RenderBody()
+    <!-- footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-2 deco">
+                <h4>Navigation</h4>
+                <li><a href="/Home/rooms">Rooms</a></li>
+                <li><a href="/Home/offers">Offers</a></li>
+                <li><a href="/Home/services">Services</a></li>
+                <li><a href="/Home/signin">Sign In</a></li>
+                <li><a href="/Home/contact">Contact</a></li> </div>
+            
+            <div class="col-md-2 deco">
+                <h4>Social</h4>
+                <div class="soci">
+                    <li><a href="www.facebook.com"><i class="f-1"> </i></a></li>
+                    <li><a href="www.twitter.com"><i class="t-1"> </i></a></li>
+                    <li><a href="www.gmail.com"><i class="g-1"> </i></a></li>
+                </div>
+            </div>
+            <div class="col-md-3 cardss">
+                <h4>Payment Sécure</h4>
+                <li><i class="visa"></i></li>
+                <li><i class="ma"></i></li>
+                <li><i class="paypal"></i></li>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="col-md-3 pos">
+                <h4>NewsLetter</h4>
+                <form method="post">
+                    <input type="text" class="textbox" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+                    <div class="smt">
+                        <input type="submit" value="Subscribe">
+                    </div>
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>© 2015 Motel. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+        </div>
+    </div>
+    <!-- footer -->
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+</body>
+</html>
